@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VANILLA JAVASCRIPT HANGMAN GAME</title>
+    <title>JEU DU PENDU EN JAVA SCRIPT</title>
     <meta charset="UTF-8" />
-    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+    <script defer src="index.js"></script>
   </head>
-
+  
   <body>
     <div class="wrapper">
-      <h1>Hangman</h1>
-      <h2>Vanilla Javascript Hangman Game</h2>
+      <h1>Jeu du pendu</h1>
+      <!-- <h2>Jeu du pendu en java script</h2> -->
       <p>
-        Use the alphabet below to guess the word, or click hint to get a clue.
+        Utilisez l'alphabet si-dessous pour deviner le mot, ou cliquez sur "indice" pour avoir un indice
       </p>
     </div>
 
@@ -22,13 +23,44 @@
       <p id="mylives"></p>
       <p id="clue">Clue -</p>
       <canvas id="stickman"
-        >This Text will show if the Browser does NOT support HTML5 Canvas
-        tag</canvas>
+      >This Text will show if the Browser does NOT support HTML5 Canvas
+      tag</canvas
+      >
       <div class="container">
-        <button class="btn-2" id="hint">Hint</button>
-        <button class="btn-2" id="reset">Play again</button>
+        <label for="score">Score</label>
+        <input type="number" name="score" id="score" value="" readonly>
+        <button class="btn-2" id="hint">Indice</button>
+        <button class="btn-2" id="reset">Rejouer</button>
+        
+
+        <dialog id="monDialog" id="dialog1" class="flex-grid">
+          <p id="titreDialog"><b>Projet personnel</b></p>
+          <hr style="width:70%;color:blue">
+          <p id="sous-titre"><i>Design web gr.2 - Automne 2024</i></p>
+          
+          <div class="middle, grid-flex">
+            <div class="flex">
+              <p id="sous-titres"><b>Realise par</b><br><i>Loic Tremblay</i></p>
+              
+              <p id="sous-titres"><b>Inspiration</b><br><a href="https://z9fhk.csb.app/" target="_blanket" id="item4"><i>https://z9fhk.csb.app/</i></a></p>
+            </div>
+            <img id="item5" src="megaman.png"
+            width="150"
+            height="auto"
+            >
+          </div>
+          
+          <div class="bottom">
+            <button class="btn-4" autofocus>Fermer la fenetre</button>
+            <button class="btn-3" id="refus"><i>Ne plus afficher cette fenetre</i></button>
+          </div>
+        </dialog>
+
+        <button class="btn-2">Afficher la fenetre</button>  
+        
       </div>
+
     </div>
-    <script src="src/index.js"></script>
+    <script src="index.js"></script>
   </body>
-</html>
+  </html>

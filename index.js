@@ -12,6 +12,10 @@ const buttonReset = document.getElementById("reset");
 const livesDisplay = document.getElementById("mylives");
 var myStickman = document.getElementById("stickman");
 var context = myStickman.getContext("2d");
+const score = document.getElementById("score");
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
 
 //generate alphabet button
 function generateButton() {
@@ -44,48 +48,48 @@ function handleClick(event) {
 
 //word array
 const question = [
-  "The Chosen Category Is Premier League Football Teams",
-  "The Chosen Category Is Films",
-  "The Chosen Category Is Cities"
+  "La Categorie choisie est Pays du monde",
+  "La Categorie choisie est Films",
+  "La Categorie choisie est Capitales du monde"
 ];
 
 const categories = [
   [
-    "everton",
-    "liverpool",
-    "swansea",
-    "chelsea",
-    "hull",
-    "manchester-city",
-    "newcastle-united"
+    "ethiopie",
+    "ireland",
+    "bresil",
+    "espagne",
+    "france",
+    "nepal",
+    "canada"
   ],
-  ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-  ["manchester", "milan", "madrid", "amsterdam", "prague"]
+  ["titanic", "star-wars", "barbie", "trouver_nemo", "transformers"],
+  ["bruxelles", "athenes", "ottawa", "amsterdam", "tokyo"]
 ];
 
 const hints = [
   [
-    "Based in Mersyside",
-    "Based in Mersyside",
-    "First Welsh team to reach the Premier Leauge",
-    "Owned by A russian Billionaire",
-    "Once managed by Phil Brown",
-    "2013 FA Cup runners up",
-    "Gazza's first club"
+    "Petit pays d'afrique de l'est",
+    "Situe a cote du royaume-uni",
+    "Ce pays heberge la foret amazonienne",
+    "Sa capitale est Madrid",
+    "Pays avec le plus de touriste",
+    "Il heberge une partie du Mont le plus haut de la Terre",
+    "Ce pays possede le plus de lacs au monde"
   ],
   [
-    "Science-Fiction horror film",
-    "1971 American action film",
-    "Historical drama",
-    "Anamated Fish",
-    "Giant great white shark"
+    "Son surnom etait l'insubmersible",
+    "Que la Force soit avec toi",
+    "Poupee populaire, majoritairement parmis les jeunes filles",
+    "Le poisson clown le plus connu",
+    "Vehicules robots se faisant la guerre"
   ],
   [
-    "Northern city in the UK",
-    "Home of AC and Inter",
-    "Spanish capital",
-    "Netherlands capital",
-    "Czech Republic capital"
+    "Siege de l'union europeenne",
+    "Abrite l'acropole et le Parthenon",
+    "Mot algonquin signifiant 'echange'",
+    "Musee de Van Gogh y est situe",
+    "La plus grande metropole du monde par sa population"
   ]
 ];
 
@@ -121,7 +125,7 @@ function generateAnswerDisplay(word) {
 }
 
 function showHint() {
-  containerHint.innerHTML = `Clue - ${hint}`;
+  containerHint.innerHTML = `Indice - ${hint}`;
 }
 
 buttonHint.addEventListener("click", showHint);
@@ -134,12 +138,13 @@ function init() {
   winningCheck = "";
   context.clearRect(0, 0, 400, 400);
   canvas();
-  containerHint.innerHTML = `Clue -`;
-  livesDisplay.innerHTML = `You have ${life} lives!`;
+  containerHint.innerHTML = `Indice -`;
+  livesDisplay.innerHTML = `Vous avez ${life} vies!`;
   setAnswer();
   container.innerHTML = generateButton();
   container.addEventListener("click", handleClick);
   console.log(answer);
+  score.value == 0;                                                               //met le compteur a zero quand la page se load
   //console.log(hint);
 }
 
@@ -181,6 +186,7 @@ function guess(event) {
         livesDisplay.innerHTML = `You have ${life} life!`;
       } else {
         livesDisplay.innerHTML = `GAME OVER!`;
+        score.value == 0;                                                               //reset du compteur
       }
     } else {
       return;
@@ -190,6 +196,7 @@ function guess(event) {
     //console.log(life);
     if (answer === winningCheck) {
       livesDisplay.innerHTML = `YOU WIN!`;
+      score.value ++;                                                                   //ajout d'un compteur 
       return;
     }
   }
@@ -273,3 +280,29 @@ var drawArray = [
   frame2,
   frame1
 ];
+//============================================================================================================================================
+
+
+// le bouton "afficher la fenetre" ouvre le dialogue
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+// le bouton "Fermer" ferme le dialogue
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
+
+// fermeture du dialogue si le bouton ne plus afficher est clicker
+const bidule = document.getElementById('refus');
+
+bidule.addEventListener("click", function(){
+  const dialogue = document.getElementById('monDialog');
+  //fermer la boite de dialogue 
+  dialogue.close();
+});
+
+// ouverture du dialog sur l'ouverture de la page
+window.onload = function() {
+  document.getElementById('monDialog').showModal();
+};

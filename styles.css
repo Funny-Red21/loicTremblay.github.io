@@ -1,8 +1,17 @@
+#sous-titre{
+    font-size: 15px;
+}
+#sous-titres{
+    font-size: 16px;
+}
+#titreDialog{
+    font-size: 25px;
+}
 body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
       Helvetica, Arial, "Lucida Grande", sans-serif;
-    background-color: #c1d72e;
-    color: white;
+    background-color: #424242;
+    color: rgb(255, 255, 255);
     text-align: center;
     height: 100%;
     font-size: 18px;
@@ -34,16 +43,32 @@ h1 {
 h2 {
     font-size: 1.2em;
 }
-  
+
 p {
     font-size: 1.2em;
 }
-  
+
+.btn-3{
+    background-color: #ffffff;
+    border-color: #ffffff;
+    width: auto;
+    margin: 0px 0px 0px 0px;
+}
+.btn-4{
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #15f7ff;
+    width: 175px;
+    height: 40px;
+    margin: 0px 0px 0px 0px;
+
+}
+
 Button {
-    background: #c1d72e;
+    background: #15f7ff;
     border-radius: 5px;
-    border: solid 1px white;
-    color: white;
+    border: solid 1px rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     width: 35px;
     height: 35px;
     margin: 0 10px 10px 0;
@@ -51,35 +76,94 @@ Button {
 }
 Button:hover {
     transition: 0.5s;
-    background: white;
+    background: rgb(255, 255, 255);
     border: solid 1px white;
-    color: #c1d72e;
+    color: #000000;
+    font-size: 1em;
 }
   
 .selected {
-    background: white;
+    background: rgb(255, 66, 66);
     border: solid 1px white;
-    color: #c1d72e;
+    color: rgb(0, 0, 0);
 }
   
 .btn-2 {
     border-radius: 10px;
-    background: #c1d72e;
-    color: white;
+    background: #15f7ff;
+    color: rgb(0, 0, 0);
     border: solid 1px white;
     text-decoration: none;
     cursor: pointer;
     font-size: 1.2em;
     padding: 10px 10px;
-    width: 180px;
-    height: 50px;
+    width: 200px;
+    height: 60px;
     margin: 0 10px 10px 0;
   
     outline: none;
 }
 .btn-2:hover {
     transition: 0.5s;
-    background: white;
+    background: #ffffff;
     border: solid 1px white;
-    color: #c1d72e;
+    color: #000000;
+}
+::backdrop {
+    background-color: rgba(93, 188, 251, 0.5);
+}
+hr{
+    color: blue;
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.middle{
+    
+}
+.flex-grid{
+    border-radius: 20px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+dialog{
+    width: 550px;
+    height: 500px;
+}
+.btn-5 {
+    border-radius: 10px;
+    background: #dd63ff;
+    color: rgb(0, 0, 0);
+    border: solid 1px white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    width: 200px;
+    height: 60px;
+    margin: 0 10px 10px 0;
+  
+    outline: none;
+}
+#score{
+    border-radius: 15px;
+    width: 60px;
+    height: 35px;
+    font-size: 25px;
+    
+}
+input{
+    background-color: #b9b9b9;
+    outline-color: #ffffff;
+}
+label{
+    font-size: 25px;
+    color:#15f7ff;
 }
